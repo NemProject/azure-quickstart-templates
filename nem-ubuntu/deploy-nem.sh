@@ -22,9 +22,19 @@ echo "vmname: $VMNAME"
 # setup the Azure CLI
 #####################
 time sudo npm install azure-cli -g
-time sudo update-alternatives --install /usr/bin/node nodejs /usr/bin/nodejs 100
 
 ####################
 # Setup NEM
 ####################
 
+# Generate needed config
+generatedbootkey=$(< /dev/urandom tr -dc a-f0-9 | head -c64)
+nodename=NIS_ON_AZURE_$(< /dev/urandom tr -dc 0-9 | head -c6)
+cat >$HOME/nis.config-user.properties <<EOF
+nis.bootKey = $generatedbootkey
+nis.bootName = $nodename
+nem.network = testnet
+EOF
+
+# start container
+docker run --rm -p 7890:7890 -v $HOME/nis.config-user.properties:/package/nis/config-user.properties  rb2nem/nis
