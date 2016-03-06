@@ -21,6 +21,18 @@
         "West Europe"
       ]
     },
+    "adminUsername": {
+      "type": "string",
+      "metadata": {
+        "description": "admin username"
+      }
+    },
+    "adminPassword": {
+      "type": "secureString",
+      "metadata": {
+        "description": "admin password"
+      }
+    },
     "nemnet": {
       "type": "string",
       "metadata": {
