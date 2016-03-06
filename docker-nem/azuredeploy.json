@@ -31,6 +31,13 @@
         "testnet"
       ]
     },
+    "peersConfig": {
+      "type": "object",
+      "value": "",
+      "metadata": {
+        "description": "List of space separated triplets ip-name-key."
+      }
+    },
     "dnsNameForPublicIP": {
       "type": "string",
       "metadata": {
@@ -53,9 +60,10 @@
     "publicIPAddressName": "myPublicIP",
     "publicIPAddressType": "Dynamic",
     "vmStorageAccountContainerName": "vhds",
-    "vmName": "MyDockerVM",
+    "vmName": "Docker-NEM",
     "vmSize": "Standard_D1",
     "virtualNetworkName": "MyVNET",
+    "apiVersion": "2016-03-05",
     "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
     "nsgID": "[resourceId('Microsoft.Network/networkSecurityGroups',variables('nsgName'))]",
     "subnetRef": "[concat(variables('vnetID'),'/subnets/',variables('subnetName'))]"
@@ -216,6 +224,28 @@
         }
       }
     },
+    {
+      "type": "Microsoft.Compute/virtualMachines/extensions",
+      "name": "[concat(variables('vmName'),'/newuserscript')]",
+      "apiVersion": "[variables('apiVersion')]",
+      "location": "[variables('location')]",
+      "dependsOn": [
+        "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'))]"
+      ],
+      "properties": {
+        "publisher": "Microsoft.OSTCExtensions",
+        "type": "CustomScriptForLinux",
+        "typeHandlerVersion": "1.4",
+        "autoUpgradeMinorVersion": true,
+        "settings": {
+          "fileUris": [
+            "https://raw.githubusercontent.com/NewEconomyMovement/azure-quickstart-templates/nem-baas-template/docker-nem/setup-peers-ip.sh"
+          ],
+          "commandToExecute": "[concat('bash setup-peers-ip.sh ', parameters('peersConfig'))]"
+        }
+      }
+    },
+
     {
       "type": "Microsoft.Compute/virtualMachines/extensions",
       "name": "[concat(variables('vmName'),'/', variables('extensionName'))]",
