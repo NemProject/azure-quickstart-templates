@@ -60,7 +60,7 @@
     "vmStorageAccountContainerName": "vhds",
     "vmName": "[parameters('vmDnsPrefix')]",
     "virtualNetworkName": "WPVNET",
-    "apiVersion": "2016-03-05",
+    "apiVersion": "2015-06-15",
     "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
     "subnetRef": "[concat(variables('vnetID'),'/subnets/',variables('subnetName'))]",
     "storageAccountName": "[replace(replace(tolower(concat(parameters('storageAccountNamePrefix'), uniquestring(resourceGroup().id))), '-',''),'.','')]",
