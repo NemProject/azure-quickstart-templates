@@ -33,7 +33,7 @@
     },
     "peersConfig": {
       "type": "object",
-      "value": "",
+      "defaultValue": "",
       "metadata": {
         "description": "List of space separated triplets ip-name-key."
       }
