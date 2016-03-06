@@ -193,7 +193,7 @@
         "autoUpgradeMinorVersion": true,
         "settings": {
           "fileUris": [
-            "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/nem-ubuntu/deploy-nem.sh"
+            "https://raw.githubusercontent.com/NewEconomyMovement/azure-quickstart-templates/nem-baas-template/nem-ubuntu/deploy-nem.sh"
           ],
           "commandToExecute": "[concat('sh deploy-nem.sh ', parameters('adminUsername'))]"
         }
