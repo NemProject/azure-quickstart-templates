@@ -230,10 +230,6 @@
         "type": "DockerExtension",
         "typeHandlerVersion": "1.0",
         "autoUpgradeMinorVersion": true,
-        "protectedSettings": {
-          "environment": {
-            "ENVIRONMENT_SETTING": "[TOBEADDED]"
-          }
         },
         "settings": {
           "compose": {
