@@ -63,7 +63,7 @@
     "vmName": "Docker-NEM",
     "vmSize": "Standard_D1",
     "virtualNetworkName": "MyVNET",
-    "apiVersion": "2016-03-05",
+    "apiVersion": "2015-06-15",
     "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
     "nsgID": "[resourceId('Microsoft.Network/networkSecurityGroups',variables('nsgName'))]",
     "subnetRef": "[concat(variables('vnetID'),'/subnets/',variables('subnetName'))]"
