@@ -231,6 +231,27 @@
     },
     {
       "type": "Microsoft.Compute/virtualMachines/extensions",
+      "name": "[concat(variables('vmName'),'/supervisorconfig')]",
+      "apiVersion": "2015-06-15",
+      "location": "[variables('location')]",
+      "dependsOn": [
+        "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'))]"
+      ],
+      "properties": {
+        "publisher": "Microsoft.OSTCExtensions",
+        "type": "CustomScriptForLinux",
+        "typeHandlerVersion": "1.4",
+        "autoUpgradeMinorVersion": true,
+        "settings": {
+          "fileUris": [
+            "https://raw.githubusercontent.com/NewEconomyMovement/azure-quickstart-templates/nem-baas-template/docker-nem/scripts/setup-supervisord.sh"
+          ],
+          "commandToExecute": "['sh setup-supervisord.sh']"
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Compute/virtualMachines/extensions",
       "name": "[concat(variables('vmName'),'/', variables('extensionName'))]",
       "apiVersion": "2015-05-01-preview",
       "location": "[parameters('location')]",
@@ -250,7 +271,8 @@
                 "7890:7890"
               ],
               "volumes": [
-                "/root/nem:/root/nem"
+                "/root/nem:/root/nem",
+                "/root/supervisord.conf:/etc/supervisord.conf"
               ]
             }
           }
