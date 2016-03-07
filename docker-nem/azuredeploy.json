@@ -182,6 +182,20 @@
               "priority": 110,
               "direction": "Inbound"
             }
+          },
+          {
+            "name": "nis",
+            "properties": {
+              "description": "Allow NIS",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "7890",
+              "sourceAddressPrefix": "Internet",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 110,
+              "direction": "Inbound"
+            }
           }
         ]
       }
