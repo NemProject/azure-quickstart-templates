@@ -1,7 +1,0 @@
-{
-  "itemDisplayName": "NEM - Infrastructure on Ubuntu",
-  "description": "This template deploys NEM on a Ubuntu VM",
-  "summary": "This template deploys NEM's NIS on a Ubuntu VM",
-  "githubUsername": "patmast3r",
-  "dateUpdated": "2016-03-05"
-}
