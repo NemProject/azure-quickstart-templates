@@ -196,6 +196,20 @@
               "priority": 120,
               "direction": "Inbound"
             }
+          },
+          {
+            "name": "lightwallet",
+            "properties": {
+              "description": "Allow Lightwallet",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "7777",
+              "sourceAddressPrefix": "Internet",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 130,
+              "direction": "Inbound"
+            }
           }
         ]
       }
