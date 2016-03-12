@@ -35,6 +35,5 @@ When you launch the installation of the VM, you need to specify the following pa
 4. You can also download NCC http://bob.nem.ninja/ (this will also include NIS but nevermind that, you already have that running :)) and point it at your node. 
 
 Here's our API-documentation http://bob.nem.ninja/docs/
-
-You're going to need XEM or textXEM to fully utilize the API on the test net. 
-Please ask any questions you may have on forum.nem.io (it supports social logins including github so don't worry about signing-up). 
+ 
+Please ask any questions you may have on http://forum.nem.io (it supports social logins including github so don't worry about signing-up). 
