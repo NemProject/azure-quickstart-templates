@@ -272,7 +272,7 @@
         "autoUpgradeMinorVersion": true,
         "settings": {
           "fileUris": [
-            "https://raw.githubusercontent.com/NewEconomyMovement/azure-quickstart-templates/nem-baas-template/docker-nem/scripts/setup-supervisord.sh"
+            "https://raw.githubusercontent.com/NewEconomyMovement/azure-quickstart-templates/nem-baas-template/docker-nem/scripts/setup-docker-nem.sh"
           ],
           "commandToExecute": "['sh setup-supervisord.sh']"
         }
@@ -300,7 +300,9 @@
               ],
               "volumes": [
                 "/root/nem:/root/nem",
-                "/root/supervisord.conf:/etc/supervisord.conf"
+                "/root/supervisord.conf:/etc/supervisord.conf",
+                "/root/nis.config-user.properties:/package/nis/config-user.properties"
+
               ]
             }
           }
