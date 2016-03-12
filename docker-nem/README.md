@@ -1,4 +1,4 @@
-# NEM Infrastructure Server (NIS)
+# ![NEM-Azure](images/nem-logo-shield.png) NEM Infrastructure Server (NIS)
 
 This Microsoft Azure template deploys the NEM Infrastructure Server (NIS).
 
@@ -8,9 +8,7 @@ This Microsoft Azure template deploys the NEM Infrastructure Server (NIS).
 </a>
 
 Once your deployment is complete you will be able to use NIS's API do accomplish various tasks on the NEM public blockchain and network.
-Here's our API-documentation http://bob.nem.ninja/docs/
 
-![NEM-Azure](images/nem-logo-shield.png)
 
 # Template Parameters
 When you launch the installation of the VM, you need to specify the following parameters:
@@ -29,5 +27,11 @@ When you launch the installation of the VM, you need to specify the following pa
 
  3. then expand your resources, and public ip address of your node.
 
-2. Connect to your NEM node and start using the API
+2. Connect to your NEM node and start using the API (default port is 7890)
+3. On port 7777 you'll find a lightwallet that you can use to make transfers. 
+4. You can also download NCC http://bob.nem.ninja/ (this will also include NIS but nevermind that, you already have that running :)) and point it at your node. 
 
+Here's our API-documentation http://bob.nem.ninja/docs/
+
+You're going to need XEM or textXEM to fully utilize the API on the test net. Please ask us on forum.nem.io (it supports social logins including github so don't worry about signing-up) 
+which is also where you ask all questions you may have. 
