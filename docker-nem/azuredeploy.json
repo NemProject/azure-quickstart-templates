@@ -65,6 +65,7 @@
     "publicIPAddressName": "myPublicIP",
     "publicIPAddressType": "Dynamic",
     "vmStorageAccountContainerName": "vhds",
+    "dataDisk1VhdName": "[concat('http://',parameters('newStorageAccountName'),'.blob.core.windows.net/',variables('vmStorageAccountContainerName'),'/',variables('vmName'),'dataDisk1.vhd')]"
     "vmName": "Docker-NEM",
     "vmSize": "Standard_D1",
     "virtualNetworkName": "MyVNET",
@@ -246,7 +247,18 @@
             },
             "caching": "ReadWrite",
             "createOption": "FromImage"
-          }
+          },
+          "dataDisks": [
+              {
+                  "name": "datadisk1",
+                  "diskSizeGB": "80",
+                  "lun": 0,
+                  "vhd": {
+                      "Uri": "[variables('dataDisk1VhdName')]"
+                  },
+                  "createOption": "Empty"
+              }
+          ]
         },
         "networkProfile": {
           "networkInterfaces": [
@@ -299,9 +311,9 @@
                 "7890:7890"
               ],
               "volumes": [
-                "/root/nem:/root/nem",
-                "/root/supervisord.conf:/etc/supervisord.conf",
-                "/root/nis.config-user.properties:/package/nis/config-user.properties"
+                "/datadisk/nem:/root/nem",
+                "/datadisk/supervisord.conf:/etc/supervisord.conf",
+                "/datadisk/nis.config-user.properties:/package/nis/config-user.properties"
 
               ]
             }
