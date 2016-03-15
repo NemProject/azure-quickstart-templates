@@ -312,9 +312,7 @@
               ],
               "volumes": [
                 "/datadisk/nem:/root/nem",
-                "/datadisk/supervisord.conf:/etc/supervisord.conf",
-                "/datadisk/nis.config-user.properties:/package/nis/config-user.properties"
-
+                "/datadisk/supervisord.conf:/etc/supervisord.conf"
               ]
             }
           }

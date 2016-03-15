@@ -37,8 +37,8 @@ curl https://raw.githubusercontent.com/NewEconomyMovement/azure-quickstart-templ
 key=$(< /dev/urandom tr -dc a-f0-9 | head -c64)
 name=nemonazure_$(< /dev/urandom tr -dc a-z | head -c 20)
 
-## generate random name and bootkey
-#cat > $home/nis.config-user.properties <<EOF
-#nis.bootName = $name
-#nis.bootKey = $key
-#EOF
+# generate random name and bootkey
+cat > $home/nis.config-user.properties <<EOF
+nis.bootName = $name
+nis.bootKey = $key
+EOF
