@@ -247,18 +247,7 @@
             },
             "caching": "ReadWrite",
             "createOption": "FromImage"
-          },
-          "dataDisks": [
-              {
-                  "name": "datadisk1",
-                  "diskSizeGB": "80",
-                  "lun": 0,
-                  "vhd": {
-                      "Uri": "[variables('dataDisk1VhdName')]"
-                  },
-                  "createOption": "Empty"
-              }
-          ]
+          }
         },
         "networkProfile": {
           "networkInterfaces": [
