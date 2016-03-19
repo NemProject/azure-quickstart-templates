@@ -275,7 +275,7 @@
           "fileUris": [
             "https://raw.githubusercontent.com/NewEconomyMovement/azure-quickstart-templates/nem-baas-template/docker-nem/scripts/setup-docker-nem.sh"
           ],
-          "commandToExecute": "['sh setup-supervisord.sh']"
+          "commandToExecute": "['sh setup-docker-nem.sh']"
         }
       }
     },
@@ -285,7 +285,8 @@
       "apiVersion": "2015-05-01-preview",
       "location": "[parameters('location')]",
       "dependsOn": [
-        "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'))]"
+        "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'))]",
+        "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'), '/extensions', '/supervisorconfig')]"
       ],
       "properties": {
         "publisher": "Microsoft.Azure.Extensions",
