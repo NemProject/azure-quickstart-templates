@@ -42,3 +42,5 @@ cat > $home/nis.config-user.properties <<EOF
 nis.bootName = $name
 nis.bootKey = $key
 EOF
+
+chown 1000 /datadisk/nem -R

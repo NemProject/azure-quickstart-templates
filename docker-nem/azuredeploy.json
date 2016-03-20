@@ -309,10 +309,11 @@
             "db": {
               "image": "rb2nem/nis",
               "ports": [
-                "7890:7890"
+                "7890:7890",
+                "7777:7777"
               ],
               "volumes": [
-                "/datadisk/nem:/root/nem",
+                "/datadisk/nem:/home/nem/nem",
                 "/datadisk/supervisord.conf:/etc/supervisord.conf",
                 "/datadisk/nis.config-user.properties:/package/nis/config-user.properties"
               ]
