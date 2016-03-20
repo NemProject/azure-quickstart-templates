@@ -67,7 +67,7 @@
     "vmStorageAccountContainerName": "vhds",
     "dataDisk1VhdName": "[concat('http://',parameters('newStorageAccountName'),'.blob.core.windows.net/',variables('vmStorageAccountContainerName'),'/',variables('vmName'),'dataDisk1.vhd')]",
     "vmName": "Docker-NEM",
-    "vmSize": "Standard_D2",
+    "vmSize": "Standard_D1",
     "virtualNetworkName": "MyVNET",
     "apiVersion": "2015-06-15",
     "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
