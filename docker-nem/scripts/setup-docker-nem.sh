@@ -1,27 +1,27 @@
 #!/bin/bash
 
-## setup data disk.
-## from docker-neo4j template
-#
-## create a partition table for the disk
-#parted -s /dev/sdc mklabel msdos
-#
-## create a single large partition
-#parted -s /dev/sdc mkpart primary ext4 0\% 100\%
-#
-## install the file system
-#mkfs.ext4 /dev/sdc1
-#
-## create the mount point
-#mkdir /datadisk
-#
-## mount the disk
-#sudo mount /dev/sdc1 /datadisk/
-#
-## add mount to /etc/fstab to persist across reboots
-#echo "/dev/sdc1    /datadisk/    ext4    defaults 0 0" >> /etc/fstab
-#
-#
+# setup data disk.
+# from docker-neo4j template
+
+# create a partition table for the disk
+parted -s /dev/sdc mklabel msdos
+
+# create a single large partition
+parted -s /dev/sdc mkpart primary ext4 0\% 100\%
+
+# install the file system
+mkfs.ext4 /dev/sdc1
+
+# create the mount point
+mkdir /datadisk
+
+# mount the disk
+mount /dev/sdc1 /datadisk/
+
+# add mount to /etc/fstab to persist across reboots
+echo "/dev/sdc1    /datadisk/    ext4    defaults 0 0" >> /etc/fstab
+
+
 
 # save stuff in /datadisk
 home=/datadisk
