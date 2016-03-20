@@ -1,5 +1,7 @@
 #!/bin/bash
 
+nemnet=$1
+
 # setup data disk.
 # from docker-neo4j template
 
@@ -41,6 +43,7 @@ name=nemonazure_$(< /dev/urandom tr -dc a-z | head -c 20)
 cat > $home/nis.config-user.properties <<EOF
 nis.bootName = $name
 nis.bootKey = $key
+nem.network = $nemnet
 EOF
 
 chown 1000 /datadisk/nem -R
