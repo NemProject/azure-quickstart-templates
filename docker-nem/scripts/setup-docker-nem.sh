@@ -34,7 +34,7 @@ mkdir $home/nem/nis -p
 mkdir $home/nem/ncc -p
 
 # get supervisord config
-curl https://raw.githubusercontent.com/NewEconomyMovement/azure-quickstart-templates/nem-baas-template/docker-nem/files/supervisord.conf >$home/supervisord.conf
+curl https://raw.githubusercontent.com/NewEconomyMovement/azure-quickstart-templates/deploy_from_nem_io/docker-nem/files/supervisord.conf >$home/supervisord.conf
 
 key=$(< /dev/urandom tr -dc a-f0-9 | head -c64)
 name=nemonazure_$(< /dev/urandom tr -dc a-z | head -c 20)

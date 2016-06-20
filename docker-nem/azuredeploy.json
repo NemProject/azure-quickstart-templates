@@ -284,7 +284,7 @@
         "autoUpgradeMinorVersion": true,
         "settings": {
           "fileUris": [
-            "https://raw.githubusercontent.com/NewEconomyMovement/azure-quickstart-templates/nem-baas-template/docker-nem/scripts/setup-docker-nem.sh"
+            "https://raw.githubusercontent.com/NewEconomyMovement/azure-quickstart-templates/deploy_from_nem_io/docker-nem/scripts/setup-docker-nem.sh"
           ],
           "commandToExecute": "[concat('sh setup-docker-nem.sh',' ', parameters('nemnet'))]"
         }
